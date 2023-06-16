@@ -33,9 +33,13 @@
     ```postgres-sql
     CREATE DATABASE shortcut;
     ```
-3. Build the project and run the Spring Boot application
+3. Build the project
     ```shell
-    mvn clean package spring-boot:run
+    docker-compose build
+   ```
+4. Run the project
+    ```shell
+    docker-compose up
    ```
 
 ### Use application

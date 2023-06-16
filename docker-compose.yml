@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:12-alpine
+    container_name: db
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=shortcut
+      - PGDATA=/var/lib/postgresql/data
+    volumes:
+      - ./db/shortcut2/data:/var/lib/postgresql/data
+      - ./src/main/resources/db:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+  shortcut:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - spring.datasource.url=jdbc:postgresql://db:5432/shortcut
+      - spring.datasource.username=postgres
+      - spring.datasource.password=password
+      - spring.datasource.driver-class-name=org.postgresql.Driver
+    container_name: shortcut
+    depends_on:
+      - db
