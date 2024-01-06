@@ -12,7 +12,7 @@
 
 ### Technology stack:
 + Java 17,
-+ Maven 4.0,
++ Maven 3.9.2,
 + Hibernate 5,
 + Spring boot 2,
 + PostgreSql 14,
