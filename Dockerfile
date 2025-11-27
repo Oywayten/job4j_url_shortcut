@@ -8,5 +8,5 @@ RUN mvn package -X
 FROM openjdk:17.0.2-jdk
 WORKDIR /app
 RUN ls -R
-COPY --from=maven /app/target/job4j_url_shortcut-0.0.1-SNAPSHOT.war job4j_url_shortcut-0.0.1-SNAPSHOT.war
-CMD java -jar job4j_url_shortcut-0.0.1-SNAPSHOT.war
+COPY --from=maven /app/target/url_shortcut-0.0.1-SNAPSHOT.war shortcut-0.0.1-SNAPSHOT.war
+CMD java -jar shortcut-0.0.1-SNAPSHOT.war

@@ -50,12 +50,12 @@
    To register a site in the system, you need to send a request.
    
    URL `POST /api/v1/shortcut/registration`  
-   With the body of a JSON object. `{site : "job4j.ru"}`
+   With the body of a JSON object. `{site : "shortcut.education"}`
    ```shell
    curl --location 'localhost:8080/api/v1/shortcut/registration' \
    --header 'Content-Type: application/json' \
-   --data '{
-   "site":"example.com"
+   --data '{ 
+   "site":"example.com" 
    }'
    ```
    Response from the server. `{registration : true/false, login: UNIQUE CODE, password : UNIQUE CODE}`  
@@ -90,12 +90,12 @@
    After the user has registered his site, he can send links to the site and receive converted links.
 
    Call `POST /api/v1/shortcut/convert`  
-   With the body of a JSON object `{url: "https://job4j.ru/profile/exercise/106/task-view/532"}`
+   With the body of a JSON object `{url: "shortcut.education"}`
    ```shell
    curl --location 'localhost:8080/api/v1/shortcut/convert' \
    --header 'Content-Type: application/json' \
    --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSc0llZ3F3YTdMeHJHZFRrIiwiZXhwIjoxNjg2Nzg1MDI4fQ.sbAW7RNp0PdZ1vYicvXTg7EpU8ma7Te-l27vL3TqfvxRTChwEvL9a7U4WHHQOeMlkY0JxyXwdJUWlptcbHW_0w' \
-   --data '{"url": "https://example.com/profile/exercise/106/task-view/532"}'
+   --data '{"url": "shortcut.education"}'
    ```
 
    Response from the server `{code: UNIQUE CODE}`  
@@ -104,7 +104,7 @@
        "code": "Vap5hd5B"
    }
    ```
-   The key `Vap5hd5B` is associated with the URL `https://job4j.ru/profile/exercise/106/task-view/532`.
+   The key `Vap5hd5B` is associated with the URL `shortcut.education`.
 
 4. Forwarding. Executed without authorization.
 
@@ -117,7 +117,7 @@
    
    Response from server in header `HTTP CODE - 302 REDIRECT URL`
    ```text
-   HTTP CODE - 302 s.com/profile/exercise/106/task-view/521321 
+   HTTP CODE - 302 shortcut.education 
    ```
 
 5. Statistics.
@@ -133,12 +133,8 @@
    ```json
    [
        {
-           "url": "example.com/profile/exercise/106/task-view/532",
+           "url": "shortcut.education",
            "total": 0
        }
    ]
    ```
-
-### Contacts
-+ email: [oywayten+git@gmail.com](mailto:oywayten+git@gmail.com)
-+ telegram: [@VitaliyJVM](https://t.me/VitaliyJVM/ "go to t.me/VitaliyJVM")

@@ -5,6 +5,6 @@ CREATE TABLE host (
     password    varchar(256)
 );
 
-insert into host (site, login, password)values ('job4j.ru', '111', '222');
+insert into host (site, login, password)values ('shortcut.education', '111', '222');
 insert into host (site, login, password)values ('yandex.ru', '333', '444');
 insert into host (site, login, password)values ('google.com', '555', '666');

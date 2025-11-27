@@ -8,7 +8,7 @@ CREATE TABLE link
 );
 
 insert into link (path, host_id, short_code)
-values ('https://job4j.ru/profile/', '1', '11111111');
+values ('https://shortcut.education', '1', '11111111');
 insert into link (path, host_id, short_code)
 values ('yandex.ru/dev', '2', '22222222');
 insert into link (path, host_id, short_code)
